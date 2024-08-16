@@ -19,12 +19,9 @@
 <div class="container-menu">
 <div class="cont-menu">
   <nav>
-    <a href="#">Portafolio</a>
-    <a href="#">Servicios</a>
-    <a href="#">Suscribirse</a>
-    <a href="#">Facebook</a>
-    <a href="#">Youtube</a>
-    <a href="#">Instagram</a>
+    <ng-container *ngFor="let categoria of categorias">
+      <a href="#">{{ categoria.nombre }}</a> <!-- Aquí se muestran los nombres de las categorías -->
+    </ng-container>
   </nav>
   <label for="btn-menu">✖️</label>
 </div>

@@ -24,12 +24,44 @@
 		height: 100px;
 		position: fixed;
 		top: 0;left: 0;
+		align-items: center;
+  		justify-content: center; /* Centra el contenido horizontalmente */
 	}
 	.container{
 		width: 90%;
 		max-width: 1200px;
 		margin: auto;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
 	}
+	.logo {
+		text-align: center;
+		flex-grow: 1;
+	}
+	.logo h1{
+		color: #fff;
+		font-weight: 400;
+		font-size: 22px;
+		margin: 0; /* Remueve el margen izquierdo */	
+	}
+	.btn-menu {
+		order: -1; /* Mueve el botón de menú al principio del flexbox */
+	}
+	
+	.menu {
+		display: flex;
+		gap: 15px;
+	}
+
+	.container .btn-menu {
+		position: absolute;
+		left: 20px; /* Ajusta según el margen deseado */
+		top: 50%;
+		transform: translateY(-50%); /* Centra verticalmente */
+	  }
+
+
 	.container .btn-menu, .logo{
 		float: left;
 		line-height:100px;
@@ -39,12 +71,7 @@
 		font-size: 25px;
 		cursor: pointer;
 	}
-	.logo h1{
-		color: #fff;
-		font-weight: 400;
-		font-size: 22px;
-		margin-left: 10px;
-	}
+	
 	.container .menu{
 		float: right;
 		line-height: 100px;
