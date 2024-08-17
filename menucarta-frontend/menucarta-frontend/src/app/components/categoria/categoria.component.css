@@ -1,0 +1,30 @@
+/* Estilo para la tarjeta del producto */
+.producto-card {
+    display: flex;
+    align-items: center;
+    background-color: #f9f9f9; /* Color de fondo claro para la tarjeta */
+    border: 1px solid #ddd; /* Borde gris claro */
+    border-radius: 8px; /* Bordes redondeados */
+    padding: 16px; /* Espaciado interno */
+    margin-bottom: 20px; /* Espacio entre tarjetas */
+  }
+  
+  /* Estilo para la imagen del producto dentro de la tarjeta */
+  .producto-img {
+    width: 100px; /* Ajusta el tamaño de la imagen según sea necesario */
+    height: auto;
+    margin-right: 20px; /* Espacio entre la imagen y la información del producto */
+  }
+  
+  /* Estilo para la información del producto dentro de la tarjeta */
+  .producto-info {
+    flex-grow: 1; /* Hace que la información del producto ocupe el espacio disponible */
+    margin-right: 20px; /* Espacio entre la información y el precio del producto */
+  }
+  
+  /* Estilo para el precio del producto dentro de la tarjeta */
+  .producto-precio {
+    white-space: nowrap; /* Evita que el texto del precio se rompa en varias líneas */
+  }
+  
+  

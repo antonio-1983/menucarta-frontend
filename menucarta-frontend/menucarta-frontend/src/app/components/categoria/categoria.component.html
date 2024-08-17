@@ -3,11 +3,13 @@
     <img [src]="categoria.img" alt="{{ categoria.nombre }} imagen">
   
     <div *ngIf="categoria.productos.length > 0; else noProductos">
-      <div *ngFor="let producto of categoria.productos">
-        <h3>{{ producto.nombre }}</h3>
-        <img *ngIf="producto.img_producto" [src]="producto.img_producto" alt="{{ producto.nombre }} imagen">
-        <p *ngIf="producto.descripcion">{{ producto.descripcion }}</p>
-        <p>Precio: ${{ producto.precio }}</p>
+      <div *ngFor="let producto of categoria.productos" class="producto-card">
+        <img *ngIf="producto.img_producto" [src]="producto.img_producto" alt="{{ producto.nombre }} imagen" class="producto-img">
+        <div class="producto-info">
+          <h3>{{ producto.nombre }}</h3>
+          <p *ngIf="producto.descripcion">{{ producto.descripcion }}</p>
+        </div>
+        <p class="producto-precio">Precio: ${{ producto.precio }}</p>
       </div>
     </div>
   
@@ -15,6 +17,8 @@
       <p>No hay productos en esta categoría.</p>
     </ng-template>
   </div>
+  
+  
   
   
   
