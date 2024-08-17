@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { RouterModule, RouterOutlet } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { CategoriaService } from './services/categoria.service';
 import { Categoria } from './models/categoria.model';
@@ -7,7 +7,7 @@ import { HttpClientModule } from '@angular/common/http'; // Importa HttpClientMo
 
 @Component({
   selector: 'app-root',
-  imports: [CommonModule,RouterOutlet,HttpClientModule], // Agrega CommonModule aquí
+  imports: [CommonModule,RouterModule,HttpClientModule], // RouterOutlet
   standalone: true,
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
@@ -29,32 +29,13 @@ export class AppComponent {
       }
     );
   }
-}
-/*
-import { Component, OnInit } from '@angular/core';
-import { CategoriaService } from './services/categoria.service';
-import { Categoria } from './models/categoria.model';
 
-@Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
-})
-export class AppComponent implements OnInit {
-  categorias: Categoria[] = [];
-
-  constructor(private categoriaService: CategoriaService) {}
-
-  ngOnInit(): void {
-    this.categoriaService.getCategorias().subscribe(
-      (data: Categoria[]) => {
-        this.categorias = data;
-      },
-      error => {
-        console.error('Error al obtener las categorías', error);
-      }
-    );
+  cerrarMenu(): void {
+    // Encuentra el checkbox con el id 'btn-menu' y desmarca su selección
+    const checkbox = document.getElementById('btn-menu') as HTMLInputElement;
+    if (checkbox) {
+      checkbox.checked = false;
+    }
   }
-}
 
-*/
+}

@@ -15,12 +15,12 @@
 </header>
 <div class="capa"></div>
 <!--	--------------->
-<input type="checkbox" id="btn-menu">
+<input type="checkbox" id="btn-menu" >
 <div class="container-menu">
 <div class="cont-menu">
   <nav>
     <ng-container *ngFor="let categoria of categorias">
-      <a href="#">{{ categoria.nombre }}</a> <!-- Aquí se muestran los nombres de las categorías -->
+      <a [routerLink]="['categoria', categoria.id]"  (click)="cerrarMenu()">{{ categoria.nombre }}</a> <!-- Aquí se muestran los nombres de las categorías -->
     </ng-container>
   </nav>
   <label for="btn-menu">✖️</label>

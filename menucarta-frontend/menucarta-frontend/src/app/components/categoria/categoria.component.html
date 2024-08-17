@@ -1,1 +1,21 @@
-<p>categoria works!</p>
+<div *ngIf="categoria">
+    <h2>{{ categoria.nombre }}</h2>
+    <img [src]="categoria.img" alt="{{ categoria.nombre }} imagen">
+  
+    <div *ngIf="categoria.productos.length > 0; else noProductos">
+      <div *ngFor="let producto of categoria.productos">
+        <h3>{{ producto.nombre }}</h3>
+        <img *ngIf="producto.img_producto" [src]="producto.img_producto" alt="{{ producto.nombre }} imagen">
+        <p *ngIf="producto.descripcion">{{ producto.descripcion }}</p>
+        <p>Precio: ${{ producto.precio }}</p>
+      </div>
+    </div>
+  
+    <ng-template #noProductos>
+      <p>No hay productos en esta categoría.</p>
+    </ng-template>
+  </div>
+  
+  
+  
+  
